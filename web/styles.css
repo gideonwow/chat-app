@@ -1,0 +1,329 @@
+:root {
+  /* Default theme variables (Blue & Light) */
+  --primary-color: #1a73e8;
+  --dark-color: #0d47a1;
+  --light-color: #e8f0fe;
+  --accent-color: #4285f4;
+  --text-dark: #202124;
+  --text-light: #f8f9fa;
+  --bg-color: #f5f7fa;
+  --message-bg-light: #ffffff;
+  --message-bg-dark: #1a73e8;
+  --typing-indicator: #5f6368;
+  --chat-bg: #f5f7fa;
+  --header-bg: #e8f0fe;
+  --app-bg: #f5f7fa;
+}
+
+/* Purple & Light Theme */
+.theme-purple-light {
+  --primary-color: #7e57c2;
+  --dark-color: #4d2c91;
+  --light-color: #f3e5f5;
+  --accent-color: #9575cd;
+  --message-bg-dark: #7e57c2;
+  --header-bg: #f3e5f5;
+}
+
+/* Brown & Light Theme */
+.theme-brown-light {
+  --primary-color: #8d6e63;
+  --dark-color: #5d4037;
+  --light-color: #efebe9;
+  --accent-color: #a1887f;
+  --message-bg-dark: #8d6e63;
+  --header-bg: #efebe9;
+}
+
+/* Blue & Dark Theme */
+.theme-blue-dark {
+  --primary-color: #42a5f5;
+  --dark-color: #1976d2;
+  --light-color: #212121;
+  --accent-color: #64b5f6;
+  --text-dark: #f5f5f5;
+  --text-light: #e0e0e0;
+  --bg-color: #121212;
+  --message-bg-light: #2c2c2c;
+  --message-bg-dark: #1976d2;
+  --typing-indicator: #aaaaaa;
+  --chat-bg: #1e1e1e;
+  --header-bg: #212121;
+  --app-bg: #121212;
+}
+
+/* Purple & Dark Theme */
+.theme-purple-dark {
+  --primary-color: #9575cd;
+  --dark-color: #673ab7;
+  --light-color: #212121;
+  --accent-color: #b39ddb;
+  --text-dark: #f5f5f5;
+  --text-light: #e0e0e0;
+  --bg-color: #121212;
+  --message-bg-light: #2c2c2c;
+  --message-bg-dark: #673ab7;
+  --typing-indicator: #aaaaaa;
+  --chat-bg: #1e1e1e;
+  --header-bg: #212121;
+  --app-bg: #121212;
+}
+
+/* Brown & Dark Theme */
+.theme-brown-dark {
+  --primary-color: #a1887f;
+  --dark-color: #795548;
+  --light-color: #212121;
+  --accent-color: #bcaaa4;
+  --text-dark: #f5f5f5;
+  --text-light: #e0e0e0;
+  --bg-color: #121212;
+  --message-bg-light: #2c2c2c;
+  --message-bg-dark: #795548;
+  --typing-indicator: #aaaaaa;
+  --chat-bg: #1e1e1e;
+  --header-bg: #212121;
+  --app-bg: #121212;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+  background-color: var(--app-bg);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.app-title {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.theme-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.theme-select {
+  background-color: var(--message-bg-light);
+  color: var(--text-dark);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+label {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.wave-icon {
+  display: inline-block;
+  animation: wave 2s infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  75% { transform: rotate(-10deg); }
+}
+
+.chat-container {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: var(--message-bg-light);
+  transition: all 0.3s ease;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: var(--header-bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+.user-icon {
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-right: 12px;
+}
+
+.name-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: var(--text-dark);
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.messages-list {
+  height: 400px;
+  overflow-y: auto;
+  padding: 16px;
+  background-color: var(--chat-bg);
+  list-style: none;
+  transition: background-color 0.3s ease;
+}
+
+.message {
+  max-width: 70%;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border-radius: 18px;
+  line-height: 1.4;
+  position: relative;
+  word-wrap: break-word;
+  clear: both;
+  display: block;
+}
+
+.message-left {
+  background-color: var(--message-bg-light);
+  color: var(--text-dark);
+  float: left;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.message-right {
+  background-color: var(--message-bg-dark);
+  color: white;
+  float: right;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.message-time {
+  display: block;
+  font-size: 11px;
+  margin-top: 4px;
+  opacity: 0.8;
+}
+
+.message-left .message-time {
+  color: var(--typing-indicator);
+}
+
+.message-right .message-time {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.typing-indicator {
+  font-size: 13px;
+  color: var(--typing-indicator);
+  padding: 8px 16px;
+  text-align: center;
+  font-style: italic;
+  clear: both;
+  display: block;
+}
+
+.message-form {
+  display: flex;
+  padding: 12px;
+  background-color: var(--message-bg-light);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+.message-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  outline: none;
+  font-size: 15px;
+  margin-right: 8px;
+  transition: all 0.2s ease;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+}
+
+.message-input:focus {
+  border-color: var(--primary-color);
+}
+
+.send-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 0 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.send-button:hover {
+  background-color: var(--dark-color);
+}
+
+.send-icon {
+  margin-left: 6px;
+}
+
+.stats {
+  text-align: center;
+  margin-top: 16px;
+  color: var(--text-dark);
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+/* Scrollbar styling */
+.messages-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.messages-list::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Fix for message clearfix */
+.messages-list::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Add clearfix to individual messages */
+.message::after {
+  content: "";
+  display: table;
+  clear: both;
+}

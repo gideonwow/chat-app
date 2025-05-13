@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClickChat 💬</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <h1 class="app-title">ClickChat <span class="wave-icon">💬</span></h1>
+    
+    <div class="theme-selector">
+      <label for="theme-select">Theme:</label>
+      <select id="theme-select" class="theme-select">
+        <option value="blue-light">Blue & Light</option>
+        <option value="purple-light">Purple & Light</option>
+        <option value="brown-light">Brown & Light</option>
+        <option value="blue-dark">Blue & Dark</option>
+        <option value="purple-dark">Purple & Dark</option>
+        <option value="brown-dark">Brown & Dark</option>
+      </select>
+    </div>
+
+    <div class="chat-container">
+      <div class="user-info">
+        <i class="fas fa-user-circle user-icon"></i>
+        <input type="text" id="name-input" class="name-input" value="*anonymous" maxlength="20" />
+      </div>
+
+      <ul class="messages-list" id="message-container">
+        <!-- Messages will appear here dynamically -->
+      </ul>
+
+      <form class="message-form" id="message-form">
+        <input type="text" name="message" id="message-input" class="message-input" placeholder="Type your message..." />
+        <button type="submit" class="send-button">
+          Send <i class="fas fa-paper-plane send-icon"></i>
+        </button>
+      </form>
+    </div>
+
+    <div class="stats">
+      <span class="clients-count" id="client-total">Connecting...</span>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
