@@ -4,6 +4,7 @@ A simple real-time chat application with theme customization built with Node.js,
 
 ![image](https://github.com/user-attachments/assets/7811b3ea-9043-41f1-8ace-855ecdb966ec)
 
+https://github.com/user-attachments/assets/42d941b0-679d-4812-a2d2-ac5309212a6c
 
 ## Features
 - Real-time messaging with Socket.IO
